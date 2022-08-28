@@ -65,7 +65,7 @@ namespace Buscador_de_texto
             richTextBox1.LoadFile(listBox1.Text, RichTextBoxStreamType.PlainText);
         }
 
-        // Buscador con el metodo contains
+        // Buscador con el metodo contains 
         private void button4_Click(object sender, EventArgs e)
         {
             List<string> list = new List<string>();           
