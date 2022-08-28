@@ -5,7 +5,7 @@ namespace Buscador_de_texto
         public Form1()
         {
             InitializeComponent();
-            textBox1.Text = @"C:\carpeta";
+       
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,6 +63,20 @@ namespace Buscador_de_texto
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             richTextBox1.LoadFile(listBox1.Text, RichTextBoxStreamType.PlainText);
+        }
+
+        // Buscador con el metodo contains
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<string> list = new List<string>();           
+
+            foreach (string s  in listBox1.Items)
+            {
+                string texto = System.IO.File.ReadAllText(s);
+                if ( texto.Contains(textBox2.Text)) list.Add(s);
+            }
+            listBox1.Items.Clear();
+            list.ForEach(x => listBox1.Items.Add(x));
         }
     }
 }
